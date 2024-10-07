@@ -1,47 +1,46 @@
 #include <stdio.h>
+#include "random"
 
 template <typename Type>
-Type General(Type money, Type time) {
+Type RollDice(Type dice) 
+{
+	dice = rand() % 6 + 1;
 
-	return money * time;
+	return 0;
 }
 
-template <typename Type>
-Type Recursive(Type money, Type time) {
-	
-	auto result = 0;
-
-	if (time == 1) {
-		return money;
-	}
-	else if (time < 1)
-	{
-		return result;
-	}
-
-	result = Recursive(money * 2 - 50, time - 1);
-
-	return result;
+void Correct(char answer)
+{
+	printf("%s !! 正解!! \n",answer);
 }
 
+void Miss(char answer)
+{
+	printf("%s !! 不正解\n", answer);
+}
 
 int main(){
 
-	int recursiveMoney = 100;
-	int generalMoney = 1072;
-	const int time = 11;
-	int getRecursiveMoney = 0;
+	char odd[] = "奇数";
+	char even[] = "偶数";
+	int bet;
+	auto dice = 0;
 
-	for (int i = 0; i < time; i++)
+	printf("奇数なら 1 、偶数なら 2 を入力してね!\n");
+	scanf("%d",&bet);
+	printf("%d\n\n", &bet);
+
+	RollDice(dice);
+
+	if (dice % 2 == 1)
 	{
-		int hourRecursiveMoney = Recursive(recursiveMoney, i);
-		int getGeneralMoney = General(generalMoney, i);
 
-		getRecursiveMoney += hourRecursiveMoney;
-
-		printf("%d時間働いたとき、一般的な資金体系だと %d 円、再帰的な資金体系だと %d 円\n\n", i, getGeneralMoney, getRecursiveMoney);
 	}
-	
+
+	typedef int (*answer)();
+
+
+
 
 	return 0;
 }
