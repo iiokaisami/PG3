@@ -38,6 +38,7 @@ int main() {
 
 
     auto checkResult = [dice, inputNum, &result]() {
+
         bool isDiceOddNumber = (dice % 2 == 1);
         bool isUserOddNumber = (inputNum == 1);
 
