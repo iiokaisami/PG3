@@ -2,17 +2,15 @@
 #include <Windows.h>
 #include "random"
 
-int Correct(int dice)
-{
-    printf("%d !! 正解!! \n", dice);
+int Correct(int dice){
 
+    printf("%d !! 正解!! \n", dice);
     return 0;
 }
 
-int Miss(int dice)
-{
-    printf("%d  不正解\n", dice);
+int Miss(int dice){
 
+    printf("%d  不正解\n", dice);
     return 0;
 }
 
@@ -22,7 +20,6 @@ int main() {
     printf("奇数なら1 偶数なら2 を入力してください\n ");
     scanf_s("%d", &inputNum);
 
-    // サイコロを振って1から6のランダムな数を生成
     int dice = rand() % 6 + 1;
     int witeTime = 3000;
     int (*result)(int);
