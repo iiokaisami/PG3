@@ -1,46 +1,45 @@
 #include <stdio.h>
+#include <Windows.h>
 #include "random"
 
-template <typename Type>
-Type RollDice(Type dice) 
+int Correct(int dice)
 {
-	dice = rand() % 6 + 1;
+    printf("%d !! 正解!! \n", dice);
 
-	return 0;
+    return 0;
 }
 
-void Correct(char answer)
+int Miss(int dice)
 {
-	printf("%s !! 正解!! \n",answer);
+    printf("%d  不正解\n", dice);
+
+    return 0;
 }
 
-void Miss(char answer)
-{
-	printf("%s !! 不正解\n", answer);
-}
+int main() {
 
-int main(){
+    int inputNum;
+    printf("奇数なら1 偶数なら2 を入力してください\n ");
+    scanf_s("%d", &inputNum);
 
-	char odd[] = "奇数";
-	char even[] = "偶数";
-	int bet;
-	auto dice = 0;
+    // サイコロを振って1から6のランダムな数を生成
+    int dice = rand() % 6 + 1;
+    int witeTime = 3000;
+    int (*result)(int);
 
-	printf("奇数なら 1 、偶数なら 2 を入力してね!\n");
-	scanf("%d",&bet);
-	printf("%d\n\n", &bet);
+    // 3秒間の待機
+    printf("結果は....\n ");
+    Sleep(witeTime);
+    printf("サイコロ :  ");
 
-	RollDice(dice);
+    if ((dice % 2 == 0 && inputNum == 2) || (dice % 2 != 0 && inputNum == 1)) {
+        result = Correct;
+    }
+    else {
+        result = Miss;
+    }
 
-	if (dice % 2 == 1)
-	{
+    printf("%d\n", result(dice));
 
-	}
-
-	typedef int (*answer)();
-
-
-
-
-	return 0;
+    return 0;
 }
