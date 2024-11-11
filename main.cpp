@@ -1,30 +1,49 @@
-#include <stdio.h>
 #include <Windows.h>
 
-#include "Comparing.h"
+#include "Teacher.h"
+#include "Student.h"
 
 int main() {
 
-    int numInt1 = 99;
-    int numInt2 = 100;
+    Human* human[3];
+   
+    printf("先生が教室に入ってきた\nまずは挨拶\n\n");
+    for (int i = 0; i < 3; ++i)
+    {
 
-    float numFloat1 = 99.9f;
-    float numFloat2 = 10.1f;
+        if (i < 1)
+        {
+            human[i] = new Teacher;
+        }
+        else
+        {
+            human[i] = new Student;
+        }
+    }
 
-    double numDouble1 = 10.1f;
-    double numDouble2 =  9.9f;
+    printf("\n\n授業が始まった!\n\n");
+    for (int i = 0; i < 3; ++i)
+    {
+        
+        if (i < 1)
+        {
+            human[i]->Lesson();
+        }
+        else
+        {
+            human[i]->Lesson();
+        }
+    }
 
-    Comparing<int> resultInt(numInt1, numInt2);
-    int numInt = resultInt.Min(resultInt.num1, resultInt.num2);
-    printf("%d\n", numInt);
 
-    Comparing<float> resultFloat(numFloat1, numFloat2);
-    float numFloat = resultFloat.Min(resultFloat.num1, resultFloat.num2);
-    printf("%f\n", numFloat);
+    printf("\n\n授業が終わった...\n\n");
+    for (int i = 0; i < 3; ++i)
+    {
+        
+        delete human[i];
+    }
 
-    Comparing<double> resultDouble(numDouble1, numDouble2);
-    double numDouble = resultDouble.Min(resultDouble.num1, resultDouble.num2);
-    printf("%f\n", numDouble);
+
 
     return 0;
 }
