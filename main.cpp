@@ -1,48 +1,50 @@
 #include <Windows.h>
 
-#include "Teacher.h"
-#include "Student.h"
+#include "Circle.h"
+#include "Rectangle.h"
 
 int main() {
 
-    Human* human[3];
+    Shape* shape[2];
    
-    printf("先生が教室に入ってきた\nまずは挨拶\n\n");
-    for (int i = 0; i < 3; ++i)
+   
+    for (int i = 0; i < 2; ++i)
     {
-
         if (i < 1)
         {
-            human[i] = new Teacher;
+            shape[i] = new Rectangl;
         }
         else
         {
-            human[i] = new Student;
+            shape[i] = new Circle;
         }
     }
 
-    printf("\n\n授業が始まった!\n\n");
-    for (int i = 0; i < 3; ++i)
-    {
-        
+    for (int i = 0; i < 2; ++i)
+    {        
         if (i < 1)
         {
-            human[i]->Lesson();
+            shape[i]->Size();
         }
         else
         {
-            human[i]->Lesson();
+            shape[i]->Size();
         }
     }
 
-
-    printf("\n\n授業が終わった...\n\n");
-    for (int i = 0; i < 3; ++i)
+    for (int i = 0; i < 2; ++i)
     {
-        
-        delete human[i];
-    }
+        if (i < 1)
+        {
+            shape[i]->Draw();
+        }
+        else
+        {
+            shape[i]->Draw();
+        }
 
+        delete shape[i];
+    }
 
 
     return 0;
