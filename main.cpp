@@ -2,26 +2,31 @@
 #include <Windows.h>
 #include "random"
 
-int Correct(int dice){
+int Correct(int dice)
+{
     printf("%d !! 正解!! \n", dice);
     return 0;
 }
 
-int Miss(int dice){
+int Miss(int dice)
+{
     printf("%d  不正解\n", dice);
     return 0;
 }
 
-int DiceRoll() {
+int DiceRoll() 
+{
     std::srand(static_cast<unsigned int>(std::time(nullptr)));
     return std::rand() % 6 + 1;
 }
 
-void SetTimeout(int seconds) {
+void SetTimeout(int seconds) 
+{
     Sleep(seconds);
 }
 
-int main() {
+int main() 
+{
 
     int inputNum;
     printf("奇数なら1 偶数なら2 を入力してください\n ");
@@ -37,17 +42,20 @@ int main() {
     printf("サイコロ :  ");
 
 
-    auto checkResult = [&dice, &inputNum, &result]() {
+    auto checkResult = [&dice, &inputNum, &result]()
+        {
 
-        bool isDiceOddNumber = (dice % 2 == 1);
-        bool isUserOddNumber = (inputNum == 1);
+            bool isDiceOddNumber = (dice % 2 == 1);
+            bool isUserOddNumber = (inputNum == 1);
 
-        if ((isDiceOddNumber && isUserOddNumber) || (!isDiceOddNumber && !isUserOddNumber)) {
-            result = Correct;
-        }
-        else {
-            result = Miss;
-        }
+            if ((isDiceOddNumber && isUserOddNumber) || (!isDiceOddNumber && !isUserOddNumber))
+            {
+                result = Correct;
+            }
+            else
+            {
+                result = Miss;
+            }
 
         };
 
