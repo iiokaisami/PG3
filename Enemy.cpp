@@ -5,7 +5,8 @@
 #include <synchapi.h>
 
 
-void (Enemy::* Enemy::spPhaseTable[])() = {
+void (Enemy::* Enemy::spPhaseTable[])() =
+{
 	&Enemy::Approach,
 	&Enemy::Shoot,
 	&Enemy::Leave
