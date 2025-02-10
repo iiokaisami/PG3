@@ -16,7 +16,8 @@ void Thread3()
 	printf("Thread3\n");
 }
 
-int main(){
+int main()
+{
 
 	std::thread t1(Thread1);
 	t1.join();
