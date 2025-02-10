@@ -2,18 +2,22 @@
 #include <Windows.h>
 
 template <typename Type>
-Type Min(Type num1, Type num2) {
+Type Min(Type num1, Type num2) 
+{
 	
-	if (num1 < num2){
+	if (num1 < num2)
+	{
 		return num1;
 	}
-	else/* if (num1 > num2) */{
+	else
+	{
 		return num2;
 	}
 }
 
 template<>
-char Min(char num1, char num2) {
+char Min(char num1, char num2) 
+{
 	
 	char str[] = "数字以外は代入出来ません";
 	
@@ -23,7 +27,8 @@ char Min(char num1, char num2) {
 }
 
 
-int main(){
+int main()
+{
 
 	int numInt1 = 99;
 	int numInt2 = 100;
