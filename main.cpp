@@ -3,7 +3,8 @@
 
 #include "Comparing.h"
 
-int main() {
+int main() 
+{
 
     int numInt1 = 99;
     int numInt2 = 100;
