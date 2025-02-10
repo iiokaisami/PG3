@@ -2,7 +2,8 @@
 #include <string>
 #include <chrono>
 
-int main(){
+int main()
+{
 
     // 100000•¶š‚Ì'a'‚Å‰Šú‰»
     std::string a(100000, 'a');
