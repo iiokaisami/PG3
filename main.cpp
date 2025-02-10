@@ -2,19 +2,22 @@
 #include <Windows.h>
 #include "random"
 
-int Correct(int dice){
+int Correct(int dice)
+{
 
     printf("%d !! 正解!! \n", dice);
     return 0;
 }
 
-int Miss(int dice){
+int Miss(int dice)
+{
 
     printf("%d  不正解\n", dice);
     return 0;
 }
 
-int main() {
+int main() 
+{
 
     int inputNum;
     printf("奇数なら1 偶数なら2 を入力してください\n ");
@@ -29,10 +32,12 @@ int main() {
     Sleep(witeTime);
     printf("サイコロ :  ");
 
-    if ((dice % 2 == 0 && inputNum == 2) || (dice % 2 != 0 && inputNum == 1)) {
+    if ((dice % 2 == 0 && inputNum == 2) || (dice % 2 != 0 && inputNum == 1)) 
+    {
         result = Correct;
     }
-    else {
+    else 
+    {
         result = Miss;
     }
 
