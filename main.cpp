@@ -35,7 +35,8 @@ void LoadData()
 
 }
 
-int main() {
+int main() 
+{
 
     LoadData();
    
