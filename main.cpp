@@ -1,17 +1,20 @@
 #include <stdio.h>
 
 template <typename Type>
-Type General(Type money, Type time) {
+Type General(Type money, Type time) 
+{
 
 	return money * time;
 }
 
 template <typename Type>
-Type Recursive(Type money, Type time) {
+Type Recursive(Type money, Type time) 
+{
 	
 	auto result = 0;
 
-	if (time == 1) {
+	if (time == 1) 
+	{
 		return money;
 	}
 	else if (time < 1)
@@ -25,7 +28,8 @@ Type Recursive(Type money, Type time) {
 }
 
 
-int main(){
+int main()
+{
 
 	int recursiveMoney = 100;
 	int generalMoney = 1072;
