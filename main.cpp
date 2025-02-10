@@ -4,17 +4,21 @@
 
 using namespace std;
 
-void Draw(const list<const char*>& stations) {
-    for (const auto& station : stations) {
+void Draw(const list<const char*>& stations) 
+{
+    for (const auto& station : stations) 
+    {
        
         printf(" %s ,", station);
     }  
 }
 
-int main() {
+int main() 
+{
 
     // 駅名
-    list<const char*> stations1970 = {
+    list<const char*> stations1970 =
+    {
         "Tokyo", "Kanda", "Akihabara", "Okachimachi", "Ueno", "Uguisudani",
         "Nippori", "Tabata", "Komagome", "Sugamo", "Otsuka", "Ikebukuro",
         "Mejiro", "Takadanobaba", "Shin-Okubo", "Shinjuku", "Yoyogi", "Harajuku",
